@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List </title>
+    <link rel="stylesheet" href="./todo.css">
+</head>
+<body>
+    <h1>TO-DO List</h1>
+  <div class="todocontainer" id="todocontainer">
+    <input type="text" name="type" id="text">
+    <button type="button" id="btn">Add</button>
+  
+  </div>  
+  <ul id="ul-item">
+   
+        
+  </ul>
+
+
+
+  <script>
+    let inputval = document.getElementById('text');
+    let btn = document.getElementById('btn');
+    let ulitem = document.getElementById('ul-item');
+    // let remover = document.getElementById('remover');
+    btn.addEventListener('click',()=>{
+      let liitem = document.createElement('li');
+      liitem.className = 'li';
+      liitem.innerHTML = inputval.value +"<button onclick='removeEL(event)' id='remover'>X</button>";
+      ulitem.append(liitem);
+      inputval.value = ''
+    })
+       
+    
+
+      function removeEL(event){
+            event.target.parentElement.remove()
+            
+        }
+  //  remover.addEventListener('click',(event)=>{
+  //   event.target.parentElement.remove();
+  //  })
+  </script>
+</body>
+</html>
